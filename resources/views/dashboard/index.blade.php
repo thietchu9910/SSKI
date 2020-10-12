@@ -87,3 +87,11 @@
     </div>
     <div class="clearfix"></div>
 @endsection
+
+@section('script')
+    <script>
+        @if (session('msg'))
+            swal("Success!", "{{session('msg')}}", "success");
+        @endif
+    </script>
+@endsection

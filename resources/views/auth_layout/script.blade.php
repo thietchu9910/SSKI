@@ -3,6 +3,8 @@
 <script src="{{asset('assets/js/waves.min.js')}}"></script>
 <script src="{{asset('assets/js/pages/TweenMax.min.js')}}"></script>
 <script src="{{asset('assets/js/pages/jquery.wavify.js')}}"></script>
+<script src="{{asset('assets/js/plugins/sweetalert.min.js')}}"></script>
+<script src="{{asset('assets/js/pages/ac-alert.js')}}"></script>
 <script>
     $('#feel-the-wave').wavify({
         height: 100,

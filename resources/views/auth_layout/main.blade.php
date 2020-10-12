@@ -18,7 +18,6 @@
 <div class="auth-wrapper">
     <div class="auth-content text-center">
         <img src="{{asset('assets/images/logo-dark.png')}}" alt="" class="img-fluid mb-4">
-        <form action="">
             <div class="card">
                 <div class="row align-items-center">
                     <div class="col-md-12">
@@ -29,7 +28,6 @@
                     </div>
                 </div>
             </div>
-        </form>
         <div class="text-center">
             <div class="saprator my-4"><span>OR</span></div>
             <button class="btn text-white bg-facebook mb-2 mr-2  wid-40 px-0 hei-40 rounded-circle"><i class="fab fa-facebook-f"></i></button>
