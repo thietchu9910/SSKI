@@ -33,6 +33,10 @@
 
 @section('script')
     <script>
+        @if (isset($_GET['msg']))
+        swal("Fail!", "{{$_GET['msg']}}", "warning");
+        @endif
+
         @if (isset($msg))
         swal("Fail!", "{{$msg}}", "warning");
         @endif
