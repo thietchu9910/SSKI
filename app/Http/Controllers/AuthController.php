@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SignupRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -26,7 +29,7 @@ class AuthController extends Controller
         $data = $request->only('email', 'password');
 
         if (Auth::attempt($data)){
-            return redirect()->route('dashboard.index')->with('msg', 'Đăng nhập thành công');
+            return redirect()->route('dashboard.index')->with('msg', 'Chào mừng bạn.');
         } else {
             $msg = 'Đăng nhập không thành công';
             return view('auth.signin', compact('msg'));
@@ -37,11 +40,25 @@ class AuthController extends Controller
         return view('auth.signup');
     }
 
-    public function signUp(Request $request){
+    public function signUp(SignupRequest $request){
+        //luu user moi
+        $data = $request->all();
+        $user = new User();
+        $data['password'] = Hash::make($request->password);
+        $data['is_active'] = 1;
+        $user->fill($data);
+        $user->save();
 
+        if ($user->save()){
+            return redirect()->route('login.index')->with('msg', 'Đăng ký thành công');
+        } else {
+            $msg = 'Đã xảy ra lỗi, vui lòng đăng ký lại';
+            return view('auth.signup', compact('msg'));
+        }
     }
 
     public function logout(){
         Auth::logout();
+        return redirect()->route('login.index');
     }
 }

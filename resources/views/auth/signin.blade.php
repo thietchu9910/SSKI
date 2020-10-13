@@ -36,5 +36,9 @@
         @if (isset($msg))
         swal("Fail!", "{{$msg}}", "warning");
         @endif
+
+        @if(session('msg'))
+        swal("Success", "{{session('msg')}}", "success");
+        @endif
     </script>
 @endsection

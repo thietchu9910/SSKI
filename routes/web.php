@@ -12,6 +12,7 @@ Route::get('/login', [AuthController::class, 'index'])->name('login.index');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/signup', [AuthController::class, 'register'])->name('signup.index');
 Route::post('/signup', [AuthController::class, 'signUp'])->name('signup.post');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function (){
     Route::view('/index', 'dashboard.index')->name('dashboard.index');
