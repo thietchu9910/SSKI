@@ -40,5 +40,3 @@ Route::middleware('auth')->group(function (){
     });
 });
 
-Route::view('/table', 'table')->name('table');
-Route::view('/form', 'form')->name('form');

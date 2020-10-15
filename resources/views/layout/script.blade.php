@@ -28,3 +28,13 @@
 <!-- sweet alert Js -->
 <script src="{{asset('assets/js/plugins/sweetalert.min.js')}}"></script>
 <script src="{{asset('assets/js/pages/ac-alert.js')}}"></script>
+
+<!-- datatable Js -->
+<script src="{{asset('assets/js/plugins/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('assets/js/pages/data-basic-custom.js')}}"></script>
+
+<!-- select2 Js -->
+<script src="{{asset('assets/js/plugins/select2.full.min.js')}}"></script>
+<!-- form-select-custom Js -->
+<script src="{{asset('assets/js/pages/form-select-custom.js')}}"></script>
