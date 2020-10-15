@@ -42,13 +42,13 @@
                                 <h5 class="m-b-10">@yield('title')</h5>
                             </div>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href=""><i class="feather icon-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="#!">Dashboard Project</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 text-right">
 {{--                            <button type="button" class="btn btn-primary m-r-5"><i class="feather icon-plus"></i> Filter</button>--}}
-                            <button type="button" class="btn btn-outline-primary"><i class="feather icon-rotate-cw"></i> Reload</button>
+                            <button type="button" onclick="location.reload()" class="btn btn-outline-primary"><i  class="feather icon-rotate-cw"></i> Reload</button>
                         </div>
                     </div>
                 </div>

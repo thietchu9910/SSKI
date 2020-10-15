@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+Use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('auth.signin');
@@ -15,7 +16,7 @@ Route::post('/signup', [AuthController::class, 'signUp'])->name('signup.post');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function (){
-    Route::view('/index', 'dashboard.index')->name('dashboard.index');
+    Route::get('/index', [DashboardController::class, 'index'])->name('dashboard.index');
     //Anh em viết route trong này
 
     //Quan ly user
@@ -38,3 +39,6 @@ Route::middleware('auth')->group(function (){
 
     });
 });
+
+Route::view('/table', 'table')->name('table');
+Route::view('/form', 'form')->name('form');

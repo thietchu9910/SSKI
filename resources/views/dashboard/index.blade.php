@@ -9,10 +9,10 @@
             <div class="card">
                 <div class="card-body p-30">
                     <div class="d-flex pt-3 pb-2 no-block">
-                        <div class="align-self-center mr-5 ml-4"><img src="assets/images/icon/note.svg" alt="" title="" width="55"></div>
+                        <div class="align-self-center mr-5 ml-4"><img src="{{asset('assets/images/icon/note.svg')}}" alt="" title="" width="55"></div>
                         <div class="align-slef-center mr-auto">
-                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-danger">458</h2>
-                            <h6 class="text-muted m-b-0">Daily orders</h6>
+                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-danger">{{$cate}}</h2>
+                            <h6 class="text-muted m-b-0">Categories</h6>
                         </div>
                     </div>
                 </div>
@@ -24,10 +24,10 @@
             <div class="card">
                 <div class="card-body p-30">
                     <div class="d-flex pt-3 pb-2 no-block">
-                        <div class="align-self-center mr-5 ml-4"><img src="assets/images/icon/badge.svg" alt="" title="" width="55"></div>
+                        <div class="align-self-center mr-5 ml-4"><img src="{{asset('assets/images/icon/badge.svg')}}" alt="" title="" width="55"></div>
                         <div class="align-slef-center mr-auto">
-                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-primary">$156</h2>
-                            <h6 class="text-muted m-b-0">Daily sales</h6>
+                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-primary">{{$prod}}</h2>
+                            <h6 class="text-muted m-b-0">Products</h6>
                         </div>
                     </div>
                 </div>
@@ -39,10 +39,10 @@
             <div class="card">
                 <div class="card-body p-30">
                     <div class="d-flex pt-3 pb-2 no-block">
-                        <div class="align-self-center mr-5 ml-4"><img src="assets/images/icon/users.svg" alt="" title="" width="55"></div>
+                        <div class="align-self-center mr-5 ml-4"><img src="{{asset('assets/images/icon/users.svg')}}" alt="" title="" width="55"></div>
                         <div class="align-slef-center mr-auto">
-                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-warning">2167</h2>
-                            <h6 class="text-muted m-b-0">Total users</h6>
+                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-warning">{{$cmt}}</h2>
+                            <h6 class="text-muted m-b-0">Comments</h6>
                         </div>
                     </div>
                 </div>

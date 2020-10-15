@@ -4,7 +4,7 @@
             <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
             <a href="index.html" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="assets/images/logo-dark.png" alt="" class="logo">
+                <img src="{{asset('assets/images/logo-dark.png')}}" alt="" class="logo">
             </a>
             <a href="#!" class="mob-toggler">
                 <i class="feather icon-more-vertical"></i>
@@ -46,7 +46,7 @@
                                 </li>
                                 <li class="notification">
                                     <div class="media">
-                                        <img class="img-radius" src="assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <img class="img-radius" src="{{asset('assets/images/user/avatar-1.jpg')}}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <p><strong>John Doe</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>5 min</span></p>
                                             <p>New ticket Added</p>
@@ -58,7 +58,7 @@
                                 </li>
                                 <li class="notification">
                                     <div class="media">
-                                        <img class="img-radius" src="assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <img class="img-radius" src="{{asset('assets/images/user/avatar-2.jpg')}}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>10 min</span></p>
                                             <p>Prchace New Theme and make payment</p>
@@ -67,7 +67,7 @@
                                 </li>
                                 <li class="notification">
                                     <div class="media">
-                                        <img class="img-radius" src="assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <img class="img-radius" src="{{asset('assets/images/user/avatar-1.jpg')}}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <p><strong>Sara Soudein</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>12 min</span></p>
                                             <p>currently login</p>
@@ -76,7 +76,7 @@
                                 </li>
                                 <li class="notification">
                                     <div class="media">
-                                        <img class="img-radius" src="assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <img class="img-radius" src="{{asset('assets/images/user/avatar-2.jpg')}}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>30 min</span></p>
                                             <p>Prchace New Theme and make payment</p>
@@ -96,7 +96,7 @@
                 <li>
                     <div class="dropdown drp-user">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="assets/images/user/avatar-2.jpg" class="img-radius" alt="User-Profile-Image">
+                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" class="img-radius" alt="User-Profile-Image">
 {{--                            <span class="badge badge-pill badge-success">2</span>--}}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-notification">
