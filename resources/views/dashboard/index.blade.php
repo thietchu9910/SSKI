@@ -9,6 +9,21 @@
             <div class="card">
                 <div class="card-body p-30">
                     <div class="d-flex pt-3 pb-2 no-block">
+                        <div class="align-self-center mr-5 ml-4"><img src="{{asset('assets/images/icon/users.svg')}}" alt="" title="" width="55"></div>
+                        <div class="align-slef-center mr-auto">
+                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-warning">{{$user}}</h2>
+                            <h6 class="text-muted m-b-0">User</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <!-- Column -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-body p-30">
+                    <div class="d-flex pt-3 pb-2 no-block">
                         <div class="align-self-center mr-5 ml-4"><img src="{{asset('assets/images/icon/note.svg')}}" alt="" title="" width="55"></div>
                         <div class="align-slef-center mr-auto">
                             <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-danger">{{$cate}}</h2>
@@ -28,21 +43,6 @@
                         <div class="align-slef-center mr-auto">
                             <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-primary">{{$prod}}</h2>
                             <h6 class="text-muted m-b-0">Products</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Column -->
-        <!-- Column -->
-        <div class="col-lg-4 col-md-6">
-            <div class="card">
-                <div class="card-body p-30">
-                    <div class="d-flex pt-3 pb-2 no-block">
-                        <div class="align-self-center mr-5 ml-4"><img src="{{asset('assets/images/icon/users.svg')}}" alt="" title="" width="55"></div>
-                        <div class="align-slef-center mr-auto">
-                            <h2 class="m-b-2 text-uppercase font-30 font-medium lp-5 text-warning">{{$cmt}}</h2>
-                            <h6 class="text-muted m-b-0">Comments</h6>
                         </div>
                     </div>
                 </div>

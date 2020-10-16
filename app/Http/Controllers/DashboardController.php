@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +14,7 @@ class DashboardController extends Controller
         $cate = Category::all()->count();
         $prod = Product::all()->count();
         $cmt = Comment::all()->count();
-
-        return view('dashboard.index', compact('cate', 'prod', 'cmt'));
+        $user = User::all()->count();
+        return view('dashboard.index', compact('cate', 'prod', 'user'));
     }
 }
