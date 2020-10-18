@@ -38,3 +38,5 @@
 <script src="{{asset('assets/js/plugins/select2.full.min.js')}}"></script>
 <!-- form-select-custom Js -->
 <script src="{{asset('assets/js/pages/form-select-custom.js')}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

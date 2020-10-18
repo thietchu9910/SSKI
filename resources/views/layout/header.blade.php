@@ -96,7 +96,7 @@
                 <li>
                     <div class="dropdown drp-user">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" class="img-radius" alt="User-Profile-Image">
+                            <img src="{{asset("storage/".\Illuminate\Support\Facades\Auth::user()->image_url)}}" class="img-radius" alt="User-Profile-Image">
 {{--                            <span class="badge badge-pill badge-success">2</span>--}}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-notification">

@@ -18,6 +18,10 @@ class AuthController extends Controller
     ];
 
     public function index(){
+
+        if (Auth::check()){
+            return redirect()->route('dashboard.index')->with('msg', 'Chào mừng bạn.');
+        }
         return view('auth.signin');
     }
 
@@ -47,6 +51,8 @@ class AuthController extends Controller
         $user = new User();
         $data['password'] = Hash::make($request->password);
         $data['is_active'] = 1;
+        $data['image_url'] = 'user_image/default-user-image.png';
+        $data['role'] = 0;
         $user->fill($data);
         $user->save();
 
