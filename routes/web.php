@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function (){
         Route::post('store', [UserController::class, 'store'])->name('user.store');
 
         Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
-        Route::post('update/{id}', [UserController::class, 'update'])->name('user.update');
+        Route::post('update', [UserController::class, 'update'])->name('user.update');
     });
 
     //Quan ly category

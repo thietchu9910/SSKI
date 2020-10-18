@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -59,13 +60,31 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('msg', 'Thêm mới user thành công');
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
-
+        $user = User::find($request->id);
+        if (!$user) {
+            return redirect()->route('user.index')->with('msg', 'Người dùng không tồn tại');
+        } else {
+            $birthday = Carbon::parse($user->nirthday)->toDateString();
+            return view('user.edit', compact('user', 'birthday'));
+        }
     }
 
-    public function update()
+    public function update(UpdateUserRequest $request)
     {
+        $user = User::where('id', $request->id)->first();
 
+        $data = $request->except('_token');
+
+        if ($request->hasFile('image_url')){
+            Storage::disk('public')->delete($user->image_url);
+            $originalFileName = $request->image_url->getClientOriginalName();
+            $fileName = uniqid() . '_' . str_replace(' ', '_', $originalFileName);
+            $data['image_url'] = $request->file('image_url')->storeAs('user_image', $fileName,'public');
+        }
+
+        $user = User::where('id', $request->id)->update($data);
+        return redirect()->route('user.index')->with('msg', 'Cập nhật thông tin thành công');
     }
 }
