@@ -11,7 +11,7 @@ class CmtController extends Controller
 {
     public function index(){
 //        $cmts = Comment::orderBy('created_at', 'desc')->paginate(5);
-        $cmts = Comment::orderBy('created_at', 'desc')->get();
+        $cmts = Comment::orderBy('created_at', 'desc')->with('hasUser', 'hasProduct')->get();
         return view('comment.index', compact('cmts'));
     }
 
