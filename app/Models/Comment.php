@@ -18,10 +18,10 @@ class Comment extends Model
     ];
 
     public function hasUser(){
-        return $this->belongsTo(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function hasProduct(){
-        return $this->belongsTo(Product::class, 'id', 'product_id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }

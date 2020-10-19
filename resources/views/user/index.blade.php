@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <div class="dt-responsive table-responsive">
                         {{--                        simpletable--}}
-                        <table id="" class="table table-striped table-bordered nowrap">
+                        <table id="simpletable" class="table table-striped table-bordered nowrap">
                             <thead>
                             <tr>
                                 <th>STT</th>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="card-footer">
                     {{--                    phân trang ở đây, dung` dc bootstrap, ko can tailwin --}}
-                    {{$users->links()}}
+{{--                    {{$users->links()}}--}}
                 </div>
             </div>
         </div>
