@@ -37,7 +37,7 @@
         <!-- Column -->
         <div class="col-lg-4 col-md-6">
             <div class="card">
-                <div class="card-body p-30">
+                <div class="card-body p-30" onclick="location.href='{{route('product.index')}}'">
                     <div class="d-flex pt-3 pb-2 no-block">
                         <div class="align-self-center mr-5 ml-4"><img src="{{asset('assets/images/icon/badge.svg')}}" alt="" title="" width="55"></div>
                         <div class="align-slef-center mr-auto">

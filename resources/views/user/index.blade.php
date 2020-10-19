@@ -63,7 +63,7 @@
                 </div>
                 <div class="card-footer">
                     {{--                    phân trang ở đây, dung` dc bootstrap, ko can tailwin --}}
-{{--                    {{$users->links()}}--}}
+{{--                    {{ $users->links() }}--}}
                 </div>
             </div>
         </div>
