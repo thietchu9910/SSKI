@@ -68,6 +68,8 @@ class CmtController extends Controller
         $data = $request->all();
 
         $cmt = Comment::find($request->id);
+        $cmt->user_id = $data['user_id'];
+        $cmt->user_id = $data['user_id'];
         $cmt->content = $data['content'];
         $cmt->save();
 
