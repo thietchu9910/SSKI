@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-Use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CmtController;
 
 Route::get('/', [AuthController::class, 'index'])->name('login.index');
 
@@ -24,10 +25,10 @@ Route::middleware('auth')->group(function (){
         Route::get('index', [UserController::class, 'index'])->name('user.index');
         Route::get('detail/{id}', [UserController::class, 'detail'])->name('user.detail');
         Route::get('delete/{id}', [UserController::class, 'delete'])->name('user.delete');
-
+        //thêm mới
         Route::get('create', [UserController::class, 'create'])->name('user.create');
         Route::post('store', [UserController::class, 'store'])->name('user.store');
-
+        //sửa
         Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
         Route::post('update', [UserController::class, 'update'])->name('user.update');
     });
@@ -44,7 +45,14 @@ Route::middleware('auth')->group(function (){
 
     //Quan ly cmt
     Route::group(['prefix' => 'comment'], function (){
-
+        Route::get('index', [CmtController::class, 'index'])->name('cmt.index');
+        Route::get('delete/{id}', [CmtController::class, 'delete'])->name('cmt.delete');
+        //thêm mới
+        Route::get('create', [CmtController::class, 'create'])->name('cmt.create');
+        Route::post('store', [CmtController::class, 'store'])->name('cmt.store');
+        //sửa
+        Route::get('/edit/{id}', [CmtController::class,'edit'])->name('cmt.edit');
+        Route::post('/update', [CmtController::class,'update'])->name('cmt.update');
     });
 });
 

@@ -30,8 +30,8 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-message-square"></i></span><span class="pcoded-mtext">Comment</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="">List</a></li>
-                        <li><a href="">New comment</a></li>
+                        <li><a href="{{route('cmt.index')}}">List</a></li>
+                        <li><a href="{{route('cmt.create')}}">New comment</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,7 +1,12 @@
 $(document).ready(function() {
     setTimeout(function() {
         // [ Zero Configuration ] start
-        $('#simpletable').DataTable();
+        $('#simpletable').DataTable(
+            {
+                // paging: false,
+                info: false,
+            }
+        );
 
         // [ Default Ordering ] start
         $('#order-table').DataTable({

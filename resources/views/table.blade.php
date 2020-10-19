@@ -68,30 +68,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-body">
-                    <div id="wrapper">
-                        <input type="file" accept="image/*" onchange="preview_image(event)">
-                        <img style="max-width:300px;" id="output_image"/>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection
 
 @section('script')
     <script>
-        function preview_image(event)
-        {
-            var reader = new FileReader();
-            reader.onload = function()
-            {
-                var output = document.getElementById('output_image');
-                output.src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
+
     </script>
 @endsection
