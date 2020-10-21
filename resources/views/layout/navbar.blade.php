@@ -23,8 +23,8 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Product</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="">List</a></li>
-                        <li><a href="">New product</a></li>
+                        <li><a href="{{route('product.index')}}">List</a></li>
+                        <li><a href="{{route('product.create')}}">New product</a></li>
                     </ul>
                 </li>
                 <li class="nav-item pcoded-hasmenu">
