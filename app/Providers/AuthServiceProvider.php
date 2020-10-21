@@ -34,6 +34,17 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role >= 1;
         });
 
+        Gate::define('edit-user', function ($user, $crUser){
+            if ($user->id == $crUser->id || $user->role >= 1){
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        Gate::define('edit-cmt', function ($user, $cmt){
+
+        });
         //
     }
 }

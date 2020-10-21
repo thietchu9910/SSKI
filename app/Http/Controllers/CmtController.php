@@ -61,7 +61,7 @@ class CmtController extends Controller
     }
 
     public function edit(Request $request){
-        if (Gate::allows('create-edit')){
+        if (Gate::allows('sp-admin')){
             $cmt = Comment::find($request->id);
             $users = User::where('role', '<', 2)->get();
             $products = Product::where('is_active', 1)->get();
@@ -71,7 +71,7 @@ class CmtController extends Controller
                 return view('comment.edit', compact('cmt', 'users', 'products'));
             }
         } else {
-            return redirect()->route('cmt.index')->with('msg', 'Bạn không có quyên thực hiện hành động này');
+            return redirect()->route('cmt.index')->with('msg', 'Bạn không có quyền thực hiện hành động này');
         }
     }
 

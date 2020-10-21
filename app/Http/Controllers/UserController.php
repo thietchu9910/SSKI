@@ -79,8 +79,8 @@ class UserController extends Controller
 
     public function edit(Request $request)
     {
-        if (Gate::allows('create-edit')) {
-            $user = User::find($request->id);
+        $user = User::find($request->id);
+        if (Gate::allows('edit-user', $user)) {
             if (!$user) {
                 return redirect()->route('user.index')->with('msg', 'Người dùng không tồn tại');
             } else {
