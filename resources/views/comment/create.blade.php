@@ -15,7 +15,8 @@
                                     <label class="form-label">User</label>
                                     <select class="js-example-basic-single form-control" name="user_id">
                                         @foreach($users as $key => $user)
-                                            <option value="{{$user->id}}">{{$user->first_name}} {{$user->last_name}}</option>
+                                            <option value="{{$user->id}}">{{$user->first_name}} {{$user->last_name}}
+                                                </option>
                                         @endforeach
                                     </select>
                                 </div>

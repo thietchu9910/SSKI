@@ -42,8 +42,10 @@
                                         <a href="{{route('user.detail', ['id' => $user->id] )}}"
                                            class="btn btn-primary btn-sm">Detail</a>
                                         <a href="{{route('user.edit', ['id' => $user->id])}}" class="btn btn-success btn-sm">Edit</a>
-                                        <button onclick='confirmDel("{{route('user.delete', ['id' => $user->id])}}")' data-user-id="{{$user->id}}"
-                                           class="btn btn-danger btn-sm btn-del">Delete</button>
+                                        @if(\Illuminate\Support\Facades\Auth::user()->id != $user->id)
+                                            <button onclick='confirmDel("{{route('user.delete', ['id' => $user->id])}}")' data-user-id="{{$user->id}}"
+                                                    class="btn btn-danger btn-sm btn-del">Delete</button>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

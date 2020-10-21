@@ -16,8 +16,8 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-tag"></i></span><span class="pcoded-mtext">Category</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="">List</a></li>
-                        <li><a href="">New category</a></li>
+                        <li><a href="{{route('category.index')}}">List</a></li>
+                        <li><a href="{{route('category.create')}}">New category</a></li>
                     </ul>
                 </li>
                 <li class="nav-item pcoded-hasmenu">
