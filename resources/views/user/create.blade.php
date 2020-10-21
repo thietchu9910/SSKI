@@ -127,7 +127,9 @@
                                         <select class="js-example-basic-single form-control" name="role">
                                             <option value="0">Member</option>
                                             <option value="1">Admin</option>
+                                            @can('sp-admin')
                                             <option value="2">Super Amin</option>
+                                            @endcan
                                         </select>
                                     </div>
                                 </div>
