@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\ProductEditRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
@@ -94,7 +95,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request)
+    public function update(ProductEditRequest $request)
     {
         
        $product = Product::where('id', $request->id)->first();
@@ -129,7 +130,7 @@ class ProductController extends Controller
             return redirect()->route('product.index')->with('Không tồn tại sản phẩm');
         } else {
             $product->delete();
-            return redirect()->route('product.index')->with('msg', 'Xóa tài khoản thành công');
+            return redirect()->route('product.index')->with('msg', 'Xóa sản phẩm thành công');
         }
     }
     

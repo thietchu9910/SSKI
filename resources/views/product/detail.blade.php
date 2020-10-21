@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="card-body">
-            <div class="row">
+            <div class="row col-12">
                 <div class="col-md-4 m-b-20 text-center"><img src="{{asset("/storage/$product->image_url")}}" class="img-fluid" alt="" title=""></div>
                 <div class="col-md-8">
 
@@ -39,7 +39,7 @@
                     </div>
                     <div class="row mb-4">
                         <div class="col-3 font-weight-bold text-dark">Sale_percent</div>
-                        <div class="col">{{$product->sale_percent}}</div>
+                        <div class="col">{{$product->sale_percent}} %</div>
                     </div>
                     <div class="row mb-4">
                         <div class="col-3 font-weight-bold text-dark">Stocks</div>
@@ -49,14 +49,48 @@
                 </div>
                
             </div>
-            <div class="card bg-info">
-            <div class="col-3 font-weight-bold text-dark">Comment</div>
-                    <ul class="list-group list-group-flush">
-                        @foreach ($comments as $cmt)
-                        <li class="list-group-item">{{$cmt->content}}</li>
+            
+            
+                <div class="dt-responsive table-responsive">
+                        {{--                        simpletable--}}
+                        <table id="" class="table table-striped table-bordered nowrap">
+                            <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>User</th>
+                                <th>Content</th>
+                               
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{--                            Nội dung ở đây--}}
+                            <tr>
+                            @foreach ($comments as $key => $cmt)
+                            <td>{{$key+1}}</td>
+                                <td>{{$cmt->hasUser->first_name}}</td>
+                                <td style="max-width: 680px; text-overflow: ellipsis; overflow: hidden">{{$cmt->content}}</td>
                         @endforeach
-                    </ul>
+                              
+                               
+                                
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                            <th>STT</th>
+                                <th>User</th>
+                                <th>Content</th>
+                                
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
+                <div class="card-footer">
+                    {{--                    phân trang ở đây, dung` dc bootstrap, ko can tailwin --}}
+                    {{--                    {{$user->links()}}--}}
+                </div>
+        
         </div>
 
     </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CmtController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', [AuthController::class, 'index'])->name('login.index');
 
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
 
     //Quan ly category
     Route::group(['prefix' => 'category'], function () {
+        
     });
 
     //Quan ly product
