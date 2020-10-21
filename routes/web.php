@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CmtController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', [AuthController::class, 'index'])->name('login.index');
 
@@ -35,7 +36,14 @@ Route::middleware('auth')->group(function (){
 
     //Quan ly category
     Route::group(['prefix' => 'category'], function (){
+        Route::get('index', [CategoryController::class, 'index'])->name('category.index');
+        Route::get('delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
 
+        Route::get('create',[CategoryController::class,'create'])->name('category.create');
+        Route::post('store',[CategoryController::class,'store'])->name('category.store');
+
+        Route::get('edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+        Route::post('update',[CategoryController::class,'update'])->name('category.update');
     });
 
     //Quan ly bproduct
@@ -55,5 +63,3 @@ Route::middleware('auth')->group(function (){
         Route::post('/update', [CmtController::class,'update'])->name('cmt.update');
     });
 });
-
-
