@@ -9,7 +9,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $category = Category::orderBY('id','desc')->with('hasProducts','hasParentCate')->get();
+        //
+        $category = Category::orderBy('id','desc')->with('hasProducts','hasParentCate')->get();
         return view('category.index',compact('category'));
     }
     public function delete(Request $request)
@@ -20,32 +21,57 @@ class CategoryController extends Controller
             return redirect()->route('category.index')->with('msg', 'Xóa danh mục thành công');
         }
     }
-    public function edit(Request $request)
-    {
-     $category = Category::find($request->id);
-    return view('category.edit',compact('category'));
-
-    }
 
     public function create()
     {
-        return view('category.create');
+        $cates = Category::all();
+        return view('category.create', compact('cates'));
     }
 
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'name' => 'required|unique:categories,name'
+        ],[
+            'name.required' => 'Tên danh mục không được để trống',
+            'name.unique' => 'Tên danh mục đã tồn tại'
+        ]);
         $category = new Category();
         $data = $request->all();
         $category->fill($data);
         $category->save();
-        return redirect()->route('category.index',compact('category'));
+        return redirect()->route('category.index',compact('category'))->with('msg', 'Thêm danh mục thành công');
+    }
+
+    public function edit(Request $request)
+    {
+        $cates = Category::all();
+        $category = Category::find($request->id);
+        return view('category.edit',compact('category', 'cates'));
     }
 
     public function update(Request $request)
     {
-        $category = Category::where('id',$request->id)->first();
-        $data = $request->except('_token');
-        $category = Category::where('id', $request->id)->update($data);
-        return redirect()->route('category.index',compact('category'));
+        $data = $request->validate([
+            'name' => 'required|unique:categories,name,'.$request->id,
+         ], [
+             'name.required' => 'Tên danh mục không được để trống',
+             'name.unique' => 'Tên danh mục đã tồn tại'
+         ]);
+
+        $category = Category::find($request->id);
+
+        $data = $request->all();
+        $category->name = $data['name'];
+
+        if (isset($request->validation_switcher) && $request->validation_switcher == "on"){
+            $category->parent_id = $data['parent_id'];
+        } elseif (!isset($request->validation_switcher)) {
+            $category->parent_id = null;
+        }
+
+        $category->save();
+
+        return redirect()->route('category.index')->with('msg', 'Sửa danh mục thành công');
     }
 }
