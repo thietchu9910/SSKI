@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UserRequest;
+use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -33,6 +34,7 @@ class UserController extends Controller
         if (!$user) {
             return redirect()->route('user.index')->with('msg', 'Người dùng không tồn tại.');
         } else {
+            $cmts = Comment::where('user_id', $user->id)->delete();
             $user->delete();
             return redirect()->route('user.index')->with('msg', 'Xóa người dùng thành công');
         }
