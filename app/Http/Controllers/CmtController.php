@@ -61,8 +61,8 @@ class CmtController extends Controller
     }
 
     public function edit(Request $request){
-        if (Gate::allows('sp-admin')){
-            $cmt = Comment::find($request->id);
+        $cmt = Comment::find($request->id);
+        if (Gate::allows('edit-cmt', $cmt)){
             $users = User::where('role', '<', 2)->get();
             $products = Product::where('is_active', 1)->get();
             if (!$cmt) {
