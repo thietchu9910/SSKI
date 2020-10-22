@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
 //        $users = User::orderBy('created_at', 'desc')->paginate(5);
-        $users = User::orderBy('created_at', 'desc')->get();
+        $users = User::orderBy('created_at', 'desc')->where('id','!=', Auth::user()->id)->get();
         return view('user.index', compact('users'));
     }
 

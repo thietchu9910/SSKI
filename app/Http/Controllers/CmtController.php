@@ -76,7 +76,8 @@ class CmtController extends Controller
     }
 
     public function update(Request $request){
-        if (Gate::allows('create-edit')){
+        $cmt = Comment::find($request->id);
+        if (Gate::allows('edit-cmt', $cmt)){
             $data = $request->validate([
                 'content' => 'required',
             ], [

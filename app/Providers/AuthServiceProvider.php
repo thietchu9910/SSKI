@@ -43,6 +43,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('edit-cmt', function ($user, $cmt){
+//            dd($user->role, $user->id, $cmt->hasUser->id);;
             if ($user->role == 2 || $cmt->hasUser->id == $user->id) {
                 return true;
             } else {

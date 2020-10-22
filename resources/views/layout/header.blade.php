@@ -105,7 +105,7 @@
                             </div>
                             <ul class="pro-body">
                                 <li><a href="{{route('user.detail', ['id' => \Illuminate\Support\Facades\Auth::user()->id])}}" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
-                                <li><a href="#" class="dropdown-item"><i class="feather flaticon-pencil-edit-button"></i> My Messages</a></li>
+                                <li><a href="{{route('user.edit', ['id' => \Illuminate\Support\Facades\Auth::user()->id])}}" class="dropdown-item"><i class="feather flaticon-pencil-edit-button"></i> Edit profile </a></li>
                                 <li><a href="#" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
                                 <li>
                                     <a href="{{route('logout')}}" class="dropdown-item" title="Logout">

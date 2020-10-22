@@ -16,6 +16,7 @@
                                 <th>User</th>
                                 <th>Product</th>
                                 <th>Content</th>
+                                <th>Time</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -27,6 +28,7 @@
                                     <td>{{$cmt->hasUser->first_name}} {{$cmt->hasUser->last_name}}</td>
                                     <td>{{$cmt->hasProduct ? $cmt->hasProduct->name : ""}}</td>
                                     <td style="max-width: 300px; text-overflow: ellipsis; overflow: hidden">{{$cmt->content}}</td>
+                                    <td>{{$cmt->created_at}}</td>
                                     <td>
                                         <a href="{{route('cmt.edit', ['id' => $cmt->id])}}" class="btn btn-success btn-sm">Edit</a>
                                         <button onclick='confirmDel("{{route('cmt.delete', ['id' => $cmt->id])}}")' data-user-id="{{$cmt->id}}"
@@ -41,6 +43,7 @@
                                 <th>User</th>
                                 <th>Product</th>
                                 <th>Content</th>
+                                <th>Time</th>
                                 <th>Action</th>
                             </tr>
                             </tfoot>
