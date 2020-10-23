@@ -49,7 +49,7 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
-        if (Gate::allows('create-edit')) {
+        if (Gate::allows('create-store')) {
             return view('user.create');
         } else {
             return redirect()->route('user.index')->with('msg', 'Bạn không có quyền thực hiện hành động này');
@@ -58,7 +58,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        if (Gate::allows('create-edit')) {
+        if (Gate::allows('create-store')) {
             $user = new User();
             $data = $request->all();
 

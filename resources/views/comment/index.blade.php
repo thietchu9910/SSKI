@@ -28,7 +28,7 @@
                                     <td>{{$cmt->hasUser->first_name}} {{$cmt->hasUser->last_name}}</td>
                                     <td>{{$cmt->hasProduct ? $cmt->hasProduct->name : ""}}</td>
                                     <td style="max-width: 300px; text-overflow: ellipsis; overflow: hidden">{{$cmt->content}}</td>
-                                    <td>{{$cmt->created_at}}</td>
+                                    <td>{{date_format($cmt->updated_at, 'd-m-Y H:i:s')}}</td>
                                     <td>
                                         <a href="{{route('cmt.edit', ['id' => $cmt->id])}}" class="btn btn-success btn-sm">Edit</a>
                                         <button onclick='confirmDel("{{route('cmt.delete', ['id' => $cmt->id])}}")' data-user-id="{{$cmt->id}}"

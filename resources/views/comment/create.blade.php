@@ -12,16 +12,6 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label class="form-label">User</label>
-                                    <select class="js-example-basic-single form-control" name="user_id">
-                                        @foreach($users as $key => $user)
-                                            <option value="{{$user->id}}">{{$user->first_name}} {{$user->last_name}}
-                                                </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
                                     <label class="form-label">Product</label>
                                     <select class="js-example-basic-single form-control" name="product_id">
                                         @foreach($products as $key => $prod)
@@ -29,6 +19,18 @@
                                         @endforeach
                                     </select>
                                 </div>
+
+                                @can('choice-user')
+                                    <div class="form-group">
+                                        <label class="form-label">User</label>
+                                        <select class="js-example-basic-single form-control" name="user_id">
+                                            @foreach($users as $key => $user)
+                                                <option value="{{$user->id}}">{{$user->first_name}} {{$user->last_name}}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endcan
                             </div>
 
                             <div class="col-6">

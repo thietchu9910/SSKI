@@ -30,12 +30,16 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role == 2;
         });
 
-        Gate::define('create-edit', function ($user){
+        Gate::define('create-store', function ($user){
+            return $user->role >= 1;
+        });
+
+        Gate::define('choice-user', function ($user){
             return $user->role >= 1;
         });
 
         Gate::define('edit-user', function ($user, $crUser){
-            if ($user->id == $crUser->id || $user->role >= 1){
+            if ($user->id == $crUser->id || $user->role > $crUser->role){
                 return true;
             } else {
                 return false;
